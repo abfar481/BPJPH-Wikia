@@ -35,7 +35,7 @@ const Article = () => {
             </span>
           </div>
         )}
-        <div className="border-t border-gray-300 pt-4">
+        <div className="border-t border-gray-300 pt-8">
           <p className="text-gray-800">
             {content}
           </p>
