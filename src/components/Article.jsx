@@ -1,37 +1,26 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
-import { useParams } from 'react-router-dom';
-import articles from '../data/articles.json';
+import { Link } from 'react-router-dom'
 
-const Article = () => {
+const Article = ({ article }) => {
 
-  const { id } = useParams()
-
-  const article = articles.find((article) => article.id === parseInt(id))
-
-  if (!article) {
-    return <div> Article not found. </div>
-  }
-
-  const { title, content, author } = article
+  const { id, title, content, author } = article
 
   return (
     <>
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="max-w-2xl p-8 bg-white shadow-md rounded-md">
-          <h2 className="text-3xl font-bold mb-4">
+      <Link to={`/article/${id}`}>
+        <div className="max-w-md mx-auto p-4 bg-white shadow-md rounded-md mb-4">
+          <h2 className="text-xl font-bold mb-2">
             {title}
           </h2>
-          <p className="text-gray-600 mb-2">
+          <p className="text-gray-600 mb-1">
             {`Author: ${author}`}
           </p>
-          <div className="border-t border-gray-300 pt-4">
-            <p className="text-gray-800">
-              {content}
-            </p>
-          </div>
+          <p className="text-gray-800">
+            {`${content.substring(0, 100)}...`}
+          </p>
         </div>
-      </div>
+      </Link>
     </>
   )
 }
