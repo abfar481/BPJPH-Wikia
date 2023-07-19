@@ -1,12 +1,14 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
+import { Route, Routes } from 'react-router-dom'
+import { HomePage } from './routes'
 
 function App() {
   return (
     <>
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
+      <Routes>
+        <Route exact path='/' element={<HomePage />} />
+      </Routes>
     </>
   )
 }
