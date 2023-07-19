@@ -19,8 +19,8 @@ const Article = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center">
-      <div className="max-w-2xl p-8 bg-white shadow-md rounded-md">
-        <h2 className="text-3xl font-bold mb-4">
+      <div className="w-[95%] p-8 bg-white shadow-md rounded-md">
+        <h2 className="text-3xl font-bold mb-4 tracking-widest">
           {title}
         </h2>
         <p className="text-gray-600 mb-2">

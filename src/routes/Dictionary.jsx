@@ -4,12 +4,12 @@ import React from 'react'
 import articles from '../data/articles.json'
 import { Link } from 'react-router-dom'
 
-const HomePage = () => {
+const Dictionary = () => {
   return (
     <>
-      <div className="w-full h-screen flex items-center justify-center">
-        <div className="max-w-2xl p-4">
-          <h1 className="text-4xl font-bold mb-8">
+      <div className="w-full h-screen flex justify-center items-center">
+        <div className="w-full p-4">
+          <h1 className="text-6xl font-light text-center tracking-wider mb-16">
             Dictionary
           </h1>
           {articles.map((article) => (
@@ -27,8 +27,8 @@ const ArticleCard = ({ article }) => {
 
   return (
     <Link to={`/article/${id}`}>
-      <div className="max-w-md mx-auto p-4 bg-white shadow-md rounded-md mb-4">
-        <h2 className="text-xl font-bold mb-2">
+      <div className="max-w-[95%] mx-auto p-4 bg-white shadow-md rounded-md mb-4">
+        <h2 className="text-xl font-semibold mb-2 tracking-widest">
           {title}
         </h2>
         <p className="text-gray-600 mb-1">
@@ -42,4 +42,4 @@ const ArticleCard = ({ article }) => {
   )
 }
 
-export default HomePage
+export default Dictionary
