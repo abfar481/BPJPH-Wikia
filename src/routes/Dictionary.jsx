@@ -23,7 +23,7 @@ const Dictionary = () => {
 
 const ArticleCard = ({ article }) => {
 
-  const { id, title, content, author } = article
+  const { id, title, content, author, img } = article
 
   return (
     <Link to={`/article/${id}`}>
@@ -31,12 +31,21 @@ const ArticleCard = ({ article }) => {
         <h2 className="text-xl font-semibold mb-2 tracking-widest">
           {title}
         </h2>
-        <p className="text-gray-600 mb-1">
-          {`Author: ${author}`}
-        </p>
         <p className="text-gray-800">
           {`${content.substring(0, 100)}...`}
         </p>
+        {img && (
+          <div className="mt-4 flex items-center">
+            <img
+              src={img}
+              alt={`Profile of ${author}`}
+              className="w-8 h-8 rounded-full mr-2"
+            />
+            <span className="text-gray-600 font-medium">
+              {author}
+            </span>
+          </div>
+        )}
       </div>
     </Link>
   )

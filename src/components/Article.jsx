@@ -15,7 +15,7 @@ const Article = () => {
     return <div> Article not found. </div>
   }
 
-  const { title, content, author } = article
+  const { title, content, author, img } = article
 
   return (
     <div className="min-h-screen flex items-center justify-center">
@@ -23,9 +23,18 @@ const Article = () => {
         <h2 className="text-3xl font-bold mb-4 tracking-widest">
           {title}
         </h2>
-        <p className="text-gray-600 mb-2">
-          {`Author: ${author}`}
-        </p>
+        {img && (
+          <div className="mb-4 flex items-center">
+            <img
+              src={img}
+              alt={`Profile of ${author}`}
+              className="w-8 h-8 rounded-full mr-2"
+            />
+            <span className="text-gray-600 font-medium">
+              {author}
+            </span>
+          </div>
+        )}
         <div className="border-t border-gray-300 pt-4">
           <p className="text-gray-800">
             {content}
