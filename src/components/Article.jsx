@@ -1,7 +1,7 @@
 // src/Article.js
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import articles from '../data/articles.json'
 
 const Article = () => {
@@ -11,18 +11,22 @@ const Article = () => {
   const article = articles.find((article) => article.id === parseInt(id, 10))
 
   if (!article) {
-
-    return <div> Article not found. </div>
+    return <div> Article not found. </div>;
   }
 
   const { title, content, author, img } = article
 
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <div className="w-[95%] p-8 bg-white shadow-md rounded-md">
-        <h2 className="text-3xl font-bold mb-4 tracking-widest">
-          {title}
-        </h2>
+    <div className="h-screen flex flex-col justify-center bg-gray-100">
+      <div className="w-full max-w-screen-lg p-4 bg-white shadow-md rounded-md mx-auto">
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="text-3xl font-bold">
+            {title}
+          </h2>
+          <Link to="/" className="text-blue-500 hover:underline">
+            Go Back
+          </Link>
+        </div>
         {img && (
           <div className="mb-4 flex items-center">
             <img
